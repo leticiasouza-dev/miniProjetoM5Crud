@@ -1,0 +1,11 @@
+import styled from "styled-components"
+
+import Logo from "../Logo/Logo"
+
+const Header = () => {
+    return(
+        <Logo/>
+    )
+}
+
+export default Header
