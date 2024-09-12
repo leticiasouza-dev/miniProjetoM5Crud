@@ -23,10 +23,7 @@ const Header = ({children}) => {
             {children}
             
 
-            <ContainerBotoes>
-                <Botoes nome="entrar"/>
-                <Botoes nome="Cadastre-se"/>
-            </ContainerBotoes>
+            
         </ContainerHeader>
     )
 }
