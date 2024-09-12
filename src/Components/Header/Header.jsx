@@ -1,10 +1,33 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-import Logo from "../Logo/Logo"
+import Logo from "../Logo/Logo";
+import Botoes from "../Botoes/Botoes";
+import ContainerBotoes from "../ContainerBotoes/ContainerBotoes";
 
-const Header = () => {
+const ContainerHeader = styled.header`
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 5px 35px;
+`
+
+const Header = ({children}) => {
     return(
-        <Logo/>
+        <ContainerHeader>
+            <Logo/>
+
+            {children}
+            
+
+            <ContainerBotoes>
+                <Botoes nome="entrar"/>
+                <Botoes nome="Cadastre-se"/>
+            </ContainerBotoes>
+        </ContainerHeader>
     )
 }
 

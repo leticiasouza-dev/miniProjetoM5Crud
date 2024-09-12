@@ -1,4 +1,4 @@
-import Logo from "./Components/Logo/Logo"
+import Header from "./Components/Header/Header";
 import { createGlobalStyle } from "styled-components";
 
 const EstilosGlobais = createGlobalStyle`
@@ -9,13 +9,12 @@ const EstilosGlobais = createGlobalStyle`
   }
   
 `
-
 function App() {
 
   return (
     <>
     <EstilosGlobais/>
-    <Logo/>
+    <Header/>
       
     </>
   )

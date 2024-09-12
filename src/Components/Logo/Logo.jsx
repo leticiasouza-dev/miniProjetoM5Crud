@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import logoGotaSangue from '../../assets/logoGotaDeSangue.png'
+import logoGotaSangue from '../../assets/logoGotaDeSangue.png';
 
 const ContainerLogo = styled.div`
     display: flex;
