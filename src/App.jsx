@@ -1,7 +1,5 @@
-import Header from "./Components/Header/Header";
-import ContainerBotoes from "./Components/ContainerBotoes/ContainerBotoes";
-import Botoes from "./Components/Botoes/Botoes";
 import { createGlobalStyle } from "styled-components";
+import Home from "./Pages/Home/Home";
 
 const EstilosGlobais = createGlobalStyle`
   *{
@@ -16,15 +14,10 @@ function App() {
   return (
     <>
     <EstilosGlobais/>
-      <Header>
-            <ContainerBotoes>
-                <Botoes nome="Login" color='Black'/>
-                <Botoes nome="Cadastre-se" background="Black"/>
-            </ContainerBotoes>
-      </Header>
+      <Home/>
       
     </>
   )
 }
 
-export default App
+export default App;

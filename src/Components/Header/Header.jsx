@@ -5,9 +5,12 @@ import Botoes from "../Botoes/Botoes";
 import ContainerBotoes from "../ContainerBotoes/ContainerBotoes";
 
 const ContainerHeader = styled.header`
+    background-color: white;
     position: fixed;
     width: 100%;
     z-index: 1000;
+    top: 0;
+    left:0;
 
     display: flex;
     justify-content: space-between;
