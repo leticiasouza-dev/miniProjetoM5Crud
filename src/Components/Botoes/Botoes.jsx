@@ -1,14 +1,23 @@
 import styled from "styled-components";
 
-const Botao = styled.button`
+const Botao = styled.a`
     background-color: ${props => props.background || 'white'};
     color: ${props => props.color || 'white'};
+
     padding: 10px 25px;
+
+    cursor: pointer;
+
+    border: 1px solid black;
+    text-decoration: none;
+
+    
+
 `
 
 const Botoes = ({nome, background, color}) => {
     return(
-        <Botao background={background} color={color}>
+        <Botao href="" background={background} color={color} >
             {nome}
         </Botao>
     )

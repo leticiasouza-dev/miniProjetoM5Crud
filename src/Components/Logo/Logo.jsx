@@ -9,6 +9,12 @@ const ContainerLogo = styled.div`
     img{
         width: 80px;
     }
+
+    @media screen and (max-width: 428px){
+        img{
+            width: 50px;
+        }
+    }
 `
 
 const ContainerTexto = styled.div`

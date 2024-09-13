@@ -12,10 +12,17 @@ const ContainerHeader = styled.header`
     top: 0;
     left:0;
 
+    white-space: nowrap;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     padding: 5px 35px;
+
+    @media screen and (max-width: 428px){
+        padding: 5px 10px;
+        justify-content: center;
+    }
 `
 
 const Header = ({children}) => {

@@ -15,10 +15,10 @@ const Home = () => {
                 </ContainerBotoes>
             </Header>
 
-            <S.Body>
+            <S.Main>
                 <S.PrimeiraSessao>
                     <S.ContainerTexto>
-                        <h1>Bem-vindo ao nosso Sistema de Doação de Sangue</h1>
+                        <h1>Bem-vindo (a) ao nosso Sistema de Doação de Sangue</h1>
 
                         <p> Uma plataforma inovadora projetada especialmente para médicos e profissionais de saúde. 
                             Desenvolvido com um foco claro em facilitar o trabalho dos médicos que gerenciam e 
@@ -36,7 +36,7 @@ const Home = () => {
                         <img src={imgMedicos} alt="" />
                     </S.Figure>
                 </S.PrimeiraSessao>
-            </S.Body>
+            </S.Main>
         </>
     )
 }
