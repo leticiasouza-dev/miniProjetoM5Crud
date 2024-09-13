@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import Home from "./Pages/Home/Home";
+import Login from "./Pages/Login/Login";
 
 const EstilosGlobais = createGlobalStyle`
   *{
@@ -14,7 +15,8 @@ function App() {
   return (
     <>
     <EstilosGlobais/>
-      <Home/>
+      {/* <Home/> */}
+      <Login/>
       
     </>
   )

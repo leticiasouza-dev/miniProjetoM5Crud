@@ -15,6 +15,7 @@ const ContainerHeader = styled.header`
     white-space: nowrap;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
 
     padding: 5px 35px;
