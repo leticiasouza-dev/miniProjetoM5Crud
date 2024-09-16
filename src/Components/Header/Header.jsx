@@ -20,6 +20,8 @@ const ContainerHeader = styled.header`
 
     padding: 5px 35px;
 
+    border-bottom: 1px solid black;
+
     @media screen and (max-width: 428px){
         padding: 5px 10px;
         justify-content: center;

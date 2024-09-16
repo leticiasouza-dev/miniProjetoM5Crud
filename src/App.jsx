@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Rotas from "./Routes/Rotas";
+import TelaMedico from "./Pages/TelaMedico/TelaMedico";
 
 const EstilosGlobais = createGlobalStyle`
   *{
@@ -16,7 +17,9 @@ function App() {
   return (
     <>
     <EstilosGlobais/>
-      <Rotas/>
+      {/* <Rotas/> */}
+
+      <TelaMedico/>
     </>
   )
 }
