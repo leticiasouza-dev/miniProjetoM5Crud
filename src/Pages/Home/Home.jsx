@@ -3,6 +3,8 @@ import Header from "../../Components/Header/Header";
 import ContainerBotoes from "../../Components/ContainerBotoes/ContainerBotoes";
 import Botoes from "../../Components/Botoes/Botoes";
 
+import { Link } from 'react-router-dom';
+
 import imgMedicos from '../../assets/Doctors-amico.svg'
 
 const Home = () => {
@@ -10,7 +12,8 @@ const Home = () => {
         <>
             <Header>
                 <ContainerBotoes>
-                    <Botoes nome="Login" color='Black'/>
+                    
+                    <Botoes nome="Login" color='Black' to='/login'/>
                     <Botoes nome="Cadastre-se" background="Black"/>
                 </ContainerBotoes>
             </Header>
@@ -27,7 +30,7 @@ const Home = () => {
                         </p>
 
                         <ContainerBotoes>
-                            <Botoes nome="Login" background="Black"/>
+                            <Botoes nome="Login" background="Black" to='/login'/>
                             <Botoes nome="Cadastre-se" color='Black'/>
                         </ContainerBotoes>
                     </S.ContainerTexto>

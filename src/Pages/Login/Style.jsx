@@ -10,7 +10,7 @@ export const Sessao = styled.section`
    
 `
 
-export const ContainerFormulario = styled.div`
+export const ContainerFormulario = styled.div` 
     width: 30%;
 
     @media screen and (max-width: 428px){

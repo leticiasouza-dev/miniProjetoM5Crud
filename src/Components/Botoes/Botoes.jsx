@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Botao = styled.a`
+const Botao = styled(Link)`
     background-color: ${props => props.background || 'white'};
     color: ${props => props.color || 'white'};
 
@@ -10,14 +11,11 @@ const Botao = styled.a`
 
     border: 1px solid black;
     text-decoration: none;
-
-    
-
 `
 
-const Botoes = ({nome, background, color}) => {
+const Botoes = ({nome, background, color, to}) => {
     return(
-        <Botao href="" background={background} color={color} >
+        <Botao href="" background={background} color={color} to={to}>
             {nome}
         </Botao>
     )
