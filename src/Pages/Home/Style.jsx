@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Main = styled.main`
+export const MainHome = styled.main`
     margin-top: 100px;
 
     @media screen and (max-width: 428px){

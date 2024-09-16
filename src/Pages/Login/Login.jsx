@@ -2,12 +2,13 @@ import * as S from './Style';
 import Header from "../../Components/Header/Header";
 import ContainerBotoes from '../../Components/ContainerBotoes/ContainerBotoes';
 import Botoes from '../../Components/Botoes/Botoes';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return(
         <>
             <Header>
-                <p>Não tem uma Conta?<a href="">Sign up</a></p>
+                <p>Não tem uma Conta?<Link to='/cadastro'>Cadastre-se</Link></p>
             </Header>
 
             <S.Sessao>

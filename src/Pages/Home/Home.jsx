@@ -14,14 +14,14 @@ const Home = () => {
                 <ContainerBotoes>
                     
                     <Botoes nome="Login" color='Black' to='/login'/>
-                    <Botoes nome="Cadastre-se" background="Black"/>
+                    <Botoes nome="Cadastre-se" background="Black" to='/cadastro'/>
                 </ContainerBotoes>
             </Header>
 
-            <S.Main>
+            <S.MainHome>
                 <S.PrimeiraSessao>
                     <S.ContainerTexto>
-                        <h1>Bem-vindo (a) ao nosso Sistema de Doação de Sangue</h1>
+                        <h1>Bem-vindo (a) ao Sistema de Cadastro de Médicos!</h1>
 
                         <p> Uma plataforma inovadora projetada especialmente para médicos e profissionais de saúde. 
                             Desenvolvido com um foco claro em facilitar o trabalho dos médicos que gerenciam e 
@@ -31,7 +31,7 @@ const Home = () => {
 
                         <ContainerBotoes>
                             <Botoes nome="Login" background="Black" to='/login'/>
-                            <Botoes nome="Cadastre-se" color='Black'/>
+                            <Botoes nome="Cadastre-se" color='Black' to='/cadastro'/>
                         </ContainerBotoes>
                     </S.ContainerTexto>
 
@@ -39,7 +39,7 @@ const Home = () => {
                         <img src={imgMedicos} alt="" />
                     </S.Figure>
                 </S.PrimeiraSessao>
-            </S.Main>
+            </S.MainHome>
         </>
     )
 }
