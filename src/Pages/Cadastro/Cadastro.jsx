@@ -8,7 +8,7 @@ import Botoes from '../../Components/Botoes/Botoes';
 import { useState } from 'react';
 import { useCadastrarMedico } from '../../Hooks/useCadastrarMedico';
 
-const {cadastrarMedico} = useCadastrarMedico
+const { cadastrarMedico } = useCadastrarMedico();
 
 const Cadastro = () => {
     const [nome, setNome] = useState('');
@@ -19,7 +19,14 @@ const Cadastro = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const novoMedico  = {nome, email, telefone, especialidade, hospital}
+        const novoMedico = 
+        {   Nome: nome, 
+            Email:email, 
+            Telefone: telefone, 
+            Especialidade: especialidade, 
+            Hospital: hospital
+        }
+        
         console.log(novoMedico);
         cadastrarMedico(novoMedico)
     }
