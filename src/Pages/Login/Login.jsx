@@ -3,6 +3,10 @@ import Header from "../../Components/Header/Header";
 import Botoes from '../../Components/Botoes/Botoes';
 import { Link } from 'react-router-dom';
 import CampoInput from '../../Components/CampoInput/Input';
+import { useState } from 'react';
+
+const [email, setEmail] = useState()
+const [telefone, setTelefone] = useState()
 
 const Login = () => {
     return(

@@ -5,6 +5,13 @@ import Header from '../../Components/Header/Header';
 
 import CampoInput from '../../Components/CampoInput/Input';
 import Botoes from '../../Components/Botoes/Botoes';
+import { useState } from 'react';
+
+const [nome, setNome] = useState();
+const [email, setEmail] = useState();
+const [telefone, setTelefone] = useState();
+const [especialidade, setEspecialidade] = useState();
+const [hospital, setHospital] = useState();
 
 const Cadastro = () => {
     return(
