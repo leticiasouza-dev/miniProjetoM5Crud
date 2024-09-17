@@ -7,13 +7,15 @@ import CampoInput from '../../Components/CampoInput/Input';
 import Botoes from '../../Components/Botoes/Botoes';
 import { useState } from 'react';
 
-const [nome, setNome] = useState();
-const [email, setEmail] = useState();
-const [telefone, setTelefone] = useState();
-const [especialidade, setEspecialidade] = useState();
-const [hospital, setHospital] = useState();
+
 
 const Cadastro = () => {
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState();
+    const [telefone, setTelefone] = useState();
+    const [especialidade, setEspecialidade] = useState();
+    const [hospital, setHospital] = useState();
+
     return(
         <>
             <Header/>
@@ -28,19 +30,39 @@ const Cadastro = () => {
 
                         <S.FormularioCadastro>
                             <label htmlFor="">Nome</label>
-                            <CampoInput type="text" />
+                            <CampoInput 
+                                type="text" 
+                                value={nome}
+                                onChange={(e) => setNome(e.target.value)}
+                            />
 
                             <label htmlFor="">Email</label>
-                            <CampoInput type="email" />
+                            <CampoInput 
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
 
                             <label htmlFor="">Telefone</label>
-                            <CampoInput type="tel" />
+                            <CampoInput 
+                                type="tel" 
+                                value={telefone}
+                                onChange={(e) => setTelefone(e.target.value)}
+                            />
 
                             <label htmlFor="">Especialidade</label>
-                            <CampoInput type="text" />
+                            <CampoInput 
+                                type="text" 
+                                value={especialidade}
+                                onChange={(e) => setEspecialidade(e.target.value)}
+                            />
 
                             <label htmlFor="">Hospital</label>
-                            <CampoInput type="text" />
+                            <CampoInput 
+                                type="text" 
+                                value={hospital}
+                                onChange={(e) => setHospital(e.target.value)}
+                            />
 
                         </S.FormularioCadastro>
 

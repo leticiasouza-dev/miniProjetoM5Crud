@@ -7,9 +7,14 @@ const Campo = styled.input`
     margin-bottom: 20px;
 `
 
-const CampoInput = ({type}) => {
+const CampoInput = ({type, value, onChange}) => {
     return(
-        <Campo type={type} required/>
+        <Campo 
+            type={type} 
+            required
+            value={value}
+            onChange={onChange}
+        />
     )
 }
 

@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 import CampoInput from '../../Components/CampoInput/Input';
 import { useState } from 'react';
 
-const [email, setEmail] = useState()
-const [telefone, setTelefone] = useState()
-
 const Login = () => {
+    const [email, setEmail] = useState('')
+    const [telefone, setTelefone] = useState()
+
     return(
         <>
             <Header>
@@ -23,10 +23,18 @@ const Login = () => {
 
                     <S.Formulario>
                         <label htmlFor="">Email</label>
-                        <CampoInput type="email"/>
+                        <CampoInput 
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
 
                         <label htmlFor="">Telefone</label>
-                        <CampoInput type="tel"/>
+                        <CampoInput 
+                            type="tel"
+                            value={telefone}
+                            onChange={(e) => setTelefone(e.target.value)}
+                        />
                     </S.Formulario>
 
                     
