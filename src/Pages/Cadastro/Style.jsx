@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const MainCadastro = styled.main`
     margin-top: 100px; 
     display: flex;
+    flex-wrap: wrap;
 
     height: 90vh;
 `
@@ -10,19 +11,40 @@ export const MainCadastro = styled.main`
 export const SessaoCadastro = styled.section`
     width: 50%;
 
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `
 
 export const ContainerCadastro = styled.div`
+    margin: auto;
+    padding: 0 120px;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        margin-top: 15px;
+        font-size: 30px;
+    }
+
+    p{
+        margin: 20px 0;
+        text-align: center;
+    }
 `
 
 export const FormularioCadastro = styled.form`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 
 `
 
 export const SessaoInformações = styled.section`
     width: 50%;
 
-    background-color: rebeccapurple;
+    background-color: #f4f4f4;
 `
