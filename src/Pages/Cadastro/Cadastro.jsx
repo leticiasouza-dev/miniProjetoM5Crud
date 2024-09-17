@@ -6,15 +6,23 @@ import Header from '../../Components/Header/Header';
 import CampoInput from '../../Components/CampoInput/Input';
 import Botoes from '../../Components/Botoes/Botoes';
 import { useState } from 'react';
+import { useCadastrarMedico } from '../../Hooks/useCadastrarMedico';
 
-
+const {cadastrarMedico} = useCadastrarMedico
 
 const Cadastro = () => {
     const [nome, setNome] = useState('');
-    const [email, setEmail] = useState();
-    const [telefone, setTelefone] = useState();
-    const [especialidade, setEspecialidade] = useState();
-    const [hospital, setHospital] = useState();
+    const [email, setEmail] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [especialidade, setEspecialidade] = useState('');
+    const [hospital, setHospital] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const novoMedico  = {nome, email, telefone, especialidade, hospital}
+        console.log(novoMedico);
+        cadastrarMedico(novoMedico)
+    }
 
     return(
         <>
@@ -28,7 +36,7 @@ const Cadastro = () => {
 
                         <p>Seja bem-vindo ao sistema de cadastro de médicos especializado em doação de sangue. Esta plataforma foi criada para facilitar o registro e a interação de médicos com as instituições de doação, promovendo um gerenciamento eficiente e seguro das informações.</p>
 
-                        <S.FormularioCadastro>
+                        <S.FormularioCadastro onSubmit={handleSubmit}>
                             <label htmlFor="">Nome</label>
                             <CampoInput 
                                 type="text" 
@@ -64,9 +72,8 @@ const Cadastro = () => {
                                 onChange={(e) => setHospital(e.target.value)}
                             />
 
+                            <Botoes nome='Cadastre-se' background="Black" largura='100%'/>
                         </S.FormularioCadastro>
-
-                        <Botoes nome='Cadastre-se' background="Black" largura='100%' type='submit'/>
 
                         <p>Já tem uma conta?<Link to='/login'>Login</Link></p>
                     </S.ContainerCadastro>
