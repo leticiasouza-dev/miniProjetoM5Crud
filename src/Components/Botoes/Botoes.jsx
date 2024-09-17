@@ -4,7 +4,10 @@ import styled from "styled-components";
 const Botao = styled(Link)`
     background-color: ${props => props.background || 'white'};
     color: ${props => props.color || 'white'};
+    width: ${props => props.largura || '130px'};
 
+    text-align: center;
+    white-space: nowrap;
     padding: 10px 25px;
 
     cursor: pointer;
@@ -13,9 +16,9 @@ const Botao = styled(Link)`
     text-decoration: none;
 `
 
-const Botoes = ({nome, background, color, to}) => {
+const Botoes = ({nome, background, color, to, largura, type}) => {
     return(
-        <Botao href="" background={background} color={color} to={to}>
+        <Botao href="" background={background} color={color} largura={largura} to={to} type={type}>
             {nome}
         </Botao>
     )

@@ -1,8 +1,8 @@
 import * as S from './Style';
 import Header from "../../Components/Header/Header";
-import ContainerBotoes from '../../Components/ContainerBotoes/ContainerBotoes';
 import Botoes from '../../Components/Botoes/Botoes';
 import { Link } from 'react-router-dom';
+import CampoInput from '../../Components/CampoInput/Input';
 
 const Login = () => {
     return(
@@ -19,17 +19,19 @@ const Login = () => {
 
                     <S.Formulario>
                         <label htmlFor="">Email</label>
-                        <input type="email" />
+                        <CampoInput type="email"/>
 
                         <label htmlFor="">Telefone</label>
-                        <input type="tel" />
+                        <CampoInput type="tel"/>
                     </S.Formulario>
+
+                    
+                    <Botoes nome="Login" background="Black" largura='100%' type='submit'/>
+                    
         
                 </S.ContainerFormulario>
 
-                <ContainerBotoes>
-                    <Botoes nome="Login" background="Black"/>
-                </ContainerBotoes>
+                
             </S.Sessao>
 
         </>

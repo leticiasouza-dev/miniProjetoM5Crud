@@ -17,9 +17,9 @@ function App() {
   return (
     <>
     <EstilosGlobais/>
-      {/* <Rotas/> */}
+      <Rotas/>
 
-      <TelaMedico/>
+      {/* <TelaMedico/> */}
     </>
   )
 }
