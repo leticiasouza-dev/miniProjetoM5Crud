@@ -4,10 +4,29 @@ import Botoes from '../../Components/Botoes/Botoes';
 import { Link } from 'react-router-dom';
 import CampoInput from '../../Components/CampoInput/Input';
 import { useState } from 'react';
+import { useConsultarMedico } from '../../Hooks/useConsultarMedico';
 
 const Login = () => {
     const [email, setEmail] = useState('')
-    const [telefone, setTelefone] = useState()
+    const [telefone, setTelefone] = useState('');
+    const {consultaMedico} = useConsultarMedico();
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
+        try{
+            const medico = await consultaMedico(email, telefone);
+            if(medico) {
+                console.log('login efetivado')
+            } else {
+                console.log('Médico não encontrado');
+                alert('Médico não encontrado com os dados fornecidos.');
+            }
+
+        } catch (erro){
+            console.log('Médico não encontrado');
+        }
+    }
 
     return(
         <>
@@ -21,7 +40,7 @@ const Login = () => {
 
                     <p>Por favor, faça login para acessar e gerenciar as informações de médicos de forma segura e prática.</p>
 
-                    <S.Formulario>
+                    <S.Formulario onSubmit={handleLogin}>
                         <label htmlFor="">Email</label>
                         <CampoInput 
                             type="email"
@@ -35,10 +54,12 @@ const Login = () => {
                             value={telefone}
                             onChange={(e) => setTelefone(e.target.value)}
                         />
+
+                        <Botoes nome="Login" background="Black" largura='100%'/>
                     </S.Formulario>
 
                     
-                    <Botoes nome="Login" background="Black" largura='100%' type='submit'/>
+                    
                     
         
                 </S.ContainerFormulario>
