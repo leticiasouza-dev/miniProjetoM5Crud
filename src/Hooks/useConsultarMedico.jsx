@@ -1,28 +1,29 @@
 import axios from "axios";
 
-const API_URL = 'https://projetofinalm4-22ux.onrender.com/api/medico/verificar';
+const API_URL = 'https://projetofinalm4-22ux.onrender.com/api/medico/all';
 
 export const useConsultarMedico = () => {
     
     const consultaMedico = async (email, telefone) => {
-        try{
-            const response = await axios.get(API_URL, {
-                params: {
-                    Email: email,
-                    Telefone: telefone
-                }
-            });
+        try {
+            //obtendo todos os médicos
+            const response = await axios.get(API_URL);
+            const medicos = response.data; 
 
-            if (response.status === 200 && response.data.length > 0) {
-                return response.data[0]; // Retorna o primeiro médico encontrado
+            const medicoEncontrado = medicos.find(medico => 
+                medico.Email === email && medico.Telefone === telefone
+            );
+
+            if (medicoEncontrado) {
+                return medicoEncontrado;
             } else {
                 return null; // Se não encontrou nenhum médico
             }
-        }  catch{
-            console.log('erro ao encontrar o médico')
+        } catch (error) {
+            console.error('Erro ao consultar médico:', error);
+            return null; // Em caso de erro, retorna null
         }
-    } 
+    };
 
-    return {consultaMedico};
-
-}
+    return { consultaMedico };
+};
