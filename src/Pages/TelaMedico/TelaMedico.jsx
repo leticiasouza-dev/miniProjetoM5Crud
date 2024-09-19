@@ -8,11 +8,22 @@ import avatar from '../../assets/Avatar Image.svg'
 import { useContext} from 'react'; // Adicione useContext
 
 import { UserContext } from '../../UserContext';
+import { useNavigate } from 'react-router-dom';
 
 const TelaMedico = () => {
    
-    const { medico } = useContext(UserContext);
-    console.log(medico)
+    const { medico, setMedico } = useContext(UserContext);
+   
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const medicoLogin = localStorage.getItem('medico');
+        if (medicoLogin) {
+            setMedico(JSON.parse(medicoLogin));
+        } else {
+            navigate("/login");
+        }
+    }, [medico, navigate, setMedico]);
 
     return(
         <>

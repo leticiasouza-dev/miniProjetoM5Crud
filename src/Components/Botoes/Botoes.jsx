@@ -16,7 +16,18 @@ const Botao = styled.button`
     text-decoration: none;
 `
 
-const Botoes = ({nome, background, color, largura}) => {
+const Botoes = ({nome, background, color, largura, to}) => {
+    if(to){
+        return (
+            <Link to={to} style={{ textDecoration: 'none' }}>
+                <Botao background={background} color={color} largura={largura} type="button">
+                    {nome}
+                </Botao>
+            </Link>
+        );
+    }
+
+
     return(
         <Botao background={background} color={color} largura={largura} type='submit'>
             {nome}

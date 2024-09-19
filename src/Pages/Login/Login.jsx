@@ -18,12 +18,14 @@ const Login = () => {
     useEffect(() => {
         const usuarioLogado = localStorage.getItem('medico');
         if(usuarioLogado){
-            navigate("/tela-médico")
+            navigate("/tela-médico");
         }
     }, [navigate] )
 
     const handleLogin = async (e) => {
         e.preventDefault();
+
+
 
         try{
             const medico = await consultaMedico(email, telefone);
