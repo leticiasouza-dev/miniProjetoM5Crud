@@ -1,15 +1,26 @@
 import * as S from './Style';
 import Header from "../../Components/Header/Header";
 import Botoes from '../../Components/Botoes/Botoes';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CampoInput from '../../Components/CampoInput/Input';
-import { useState } from 'react';
 import { useConsultarMedico } from '../../Hooks/useConsultarMedico';
+
+import { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../UserContext';
 
 const Login = () => {
     const [email, setEmail] = useState('')
     const [telefone, setTelefone] = useState('');
     const {consultaMedico} = useConsultarMedico();
+    const { setMedico } = useContext(UserContext);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const usuarioLogado = localStorage.getItem('medico');
+        if(usuarioLogado){
+            navigate("/tela-médico")
+        }
+    }, [navigate] )
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -17,7 +28,11 @@ const Login = () => {
         try{
             const medico = await consultaMedico(email, telefone);
             if(medico) {
-                console.log('login efetivado')
+                console.log('login efetivado');
+
+                setMedico(medico);
+                localStorage.setItem('medico', JSON.stringify(medico)); // Armazena os dados do médico
+                navigate("/tela-médico");
             } else {
                 console.log('Médico não encontrado');
                 alert('Médico não encontrado com os dados fornecidos.');
