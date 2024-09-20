@@ -6,18 +6,32 @@ import MenuLateral from '../../Components/MenuLateral/MenuLateral';
 import iconeSino from '../../assets/bell.svg'
 import avatar from '../../assets/Avatar Image.svg'
 import { useContext} from 'react'; // Adicione useContext
+import { useDeletarMedico } from '../../Hooks/UseDeletarMedico';
 
-import { UserContext } from '../../UserContext';
+import { MedicoProvider, UserContext } from '../../UserContext';
 import { useNavigate } from 'react-router-dom';
+
+const {deletarMedico} = useDeletarMedico();
 
 const TelaMedico = () => {
    
     const { medico, setMedico } = useContext(UserContext);
     const navigate = useNavigate();
 
-    const handleLogout = () => {
-        localStorage.removeItem
-    }
+    // const handleSair = (e) => {
+    //     // localStorage.removeItem('medico')
+    //     navigate('/');
+    // }
+
+    const deletarMedicoId = async () => {
+        console.log("clicou")
+        try {
+            await deletarMedico(medico.id); // Passe o ID do médico como argumento
+            // Lógica adicional após a deleção (se necessário)
+        } catch (error) {
+            console.error('Erro ao deletar médico:', error);
+        }
+    };
 
     useEffect(() => {
         const medicoLogin = localStorage.getItem('medico');
@@ -52,7 +66,7 @@ const TelaMedico = () => {
             </Header>
 
             <S.MainTelaMedico>
-                <MenuLateral/>
+                <MenuLateral onClick={deletarMedicoId}/>
 
                 {medico ? (
                 <p>Bem-vindo, {medico.Nome}</p> // ajuste conforme os dados do usuário

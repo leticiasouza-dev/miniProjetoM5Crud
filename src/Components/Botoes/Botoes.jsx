@@ -16,7 +16,7 @@ const Botao = styled.button`
     text-decoration: none;
 `
 
-const Botoes = ({nome, background, color, largura, to}) => {
+const Botoes = ({nome, background, color, largura, to, onClick}) => {
     if(to){
         return (
             <Link to={to} style={{ textDecoration: 'none' }}>
@@ -29,7 +29,7 @@ const Botoes = ({nome, background, color, largura, to}) => {
 
 
     return(
-        <Botao background={background} color={color} largura={largura} type='submit'>
+        <Botao background={background} color={color} largura={largura} type='submit' onClick={onClick}>
             {nome}
         </Botao>
     )
