@@ -56,7 +56,7 @@ const FormularioEdicao = () => {
 
             <ContainerBotoes>
                 <Botoes nome='enviar' background='black'/>
-                <Botoes nome='cancelar' background='black'/>
+                <Botoes nome='cancelar' background='white' color='black'/>
             </ContainerBotoes>
             
 

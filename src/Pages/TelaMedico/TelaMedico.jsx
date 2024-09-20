@@ -15,9 +15,10 @@ import FormularioEdicao from '../../Components/FormularioEdicao/FormularioEdicao
 const TelaMedico = () => {
    
     const { medico, setMedico } = useContext(UserContext);
+    const {deletarMedico} = useDeletarMedico();
     const navigate = useNavigate();
 
-    const {deletarMedico} = useDeletarMedico();
+    const [mostrarFormularioEdicao, setMostrarFormularioEdicao] = useState(false)
 
     const handleSair = () => {
         setMedico(null)
@@ -72,8 +73,16 @@ const TelaMedico = () => {
             </Header>
 
             <S.MainTelaMedico>
-                <MenuLateral excluir={deletarMedicoId} sair={handleSair}/>
-                <FormularioEdicao/>
+                <MenuLateral excluir={deletarMedicoId} sair={handleSair} setMostrarFormularioEdicao={setMostrarFormularioEdicao}/>
+
+                {mostrarFormularioEdicao ? (
+                    <FormularioEdicao/>
+                ) : (
+                    <p>oiiii</p>
+                )
+                }
+
+                
 
                 {/* {medico ? (
                 <>
