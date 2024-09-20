@@ -13,8 +13,11 @@ import { useNavigate } from 'react-router-dom';
 const TelaMedico = () => {
    
     const { medico, setMedico } = useContext(UserContext);
-   
     const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem
+    }
 
     useEffect(() => {
         const medicoLogin = localStorage.getItem('medico');
@@ -23,7 +26,19 @@ const TelaMedico = () => {
         } else {
             navigate("/login");
         }
-    }, [medico, navigate, setMedico]);
+
+        const apagarSessaoAoRecarregar = () => {
+            localStorage.removeItem('medico')
+        }
+
+        window.addEventListener('beforeunload', apagarSessaoAoRecarregar);
+
+        return () => {
+            window.removeEventListener('beforeunload', apagarSessaoAoRecarregar)
+        }
+
+
+    }, [navigate, setMedico]);
 
     return(
         <>

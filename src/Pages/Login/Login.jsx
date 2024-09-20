@@ -25,8 +25,6 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
 
-
-
         try{
             const medico = await consultaMedico(email, telefone);
             if(medico) {
