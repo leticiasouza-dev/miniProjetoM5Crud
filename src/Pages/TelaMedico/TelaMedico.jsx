@@ -20,10 +20,12 @@ const TelaMedico = () => {
 
     const {deletarMedico} = useDeletarMedico();
 
-    // const handleSair = (e) => {
-    //     // localStorage.removeItem('medico')
-    //     navigate('/');
-    // }
+    const handleSair = () => {
+        setMedico(null)
+
+        localStorage.removeItem('medico');
+        navigate('/');
+    }
 
     const deletarMedicoId = async () => {
         console.log("clicou")
@@ -71,7 +73,7 @@ const TelaMedico = () => {
             </Header>
 
             <S.MainTelaMedico>
-                <MenuLateral onClick={deletarMedicoId}/>
+                <MenuLateral excluir={deletarMedicoId} sair={handleSair}/>
 
                 {medico ? (
                 <>
