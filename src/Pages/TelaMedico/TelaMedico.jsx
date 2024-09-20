@@ -11,12 +11,14 @@ import { useDeletarMedico } from '../../Hooks/UseDeletarMedico';
 import { MedicoProvider, UserContext } from '../../UserContext';
 import { useNavigate } from 'react-router-dom';
 
-const {deletarMedico} = useDeletarMedico();
+
 
 const TelaMedico = () => {
    
     const { medico, setMedico } = useContext(UserContext);
     const navigate = useNavigate();
+
+    const {deletarMedico} = useDeletarMedico();
 
     // const handleSair = (e) => {
     //     // localStorage.removeItem('medico')
@@ -26,8 +28,11 @@ const TelaMedico = () => {
     const deletarMedicoId = async () => {
         console.log("clicou")
         try {
-            await deletarMedico(medico.id); // Passe o ID do médico como argumento
-            // Lógica adicional após a deleção (se necessário)
+            await deletarMedico(medico.MedicoId); 
+            
+            localStorage.removeItem('medico');
+            navigate("/login");
+
         } catch (error) {
             console.error('Erro ao deletar médico:', error);
         }
@@ -69,7 +74,10 @@ const TelaMedico = () => {
                 <MenuLateral onClick={deletarMedicoId}/>
 
                 {medico ? (
-                <p>Bem-vindo, {medico.Nome}</p> // ajuste conforme os dados do usuário
+                <>
+                <p>Bem-vindo, {medico.Nome}</p>
+                <p>{medico.MedicoId}</p>
+                </>
                 ) : (
                 <p>Nenhum usuário logado.</p>
                 )}
