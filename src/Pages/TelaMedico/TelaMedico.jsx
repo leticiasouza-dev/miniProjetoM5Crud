@@ -10,8 +10,7 @@ import { useDeletarMedico } from '../../Hooks/UseDeletarMedico';
 
 import { MedicoProvider, UserContext } from '../../UserContext';
 import { useNavigate } from 'react-router-dom';
-
-
+import FormularioEdicao from '../../Components/FormularioEdicao/FormularioEdicao';
 
 const TelaMedico = () => {
    
@@ -74,15 +73,16 @@ const TelaMedico = () => {
 
             <S.MainTelaMedico>
                 <MenuLateral excluir={deletarMedicoId} sair={handleSair}/>
+                <FormularioEdicao/>
 
-                {medico ? (
+                {/* {medico ? (
                 <>
                 <p>Bem-vindo, {medico.Nome}</p>
                 <p>{medico.MedicoId}</p>
                 </>
                 ) : (
                 <p>Nenhum usuário logado.</p>
-                )}
+                )} */}
                     
                 
                 

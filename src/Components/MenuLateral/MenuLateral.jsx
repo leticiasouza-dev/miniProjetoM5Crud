@@ -2,7 +2,7 @@ import * as S from './Style';
 
 import Botoes from '../Botoes/Botoes';
 
-const MenuLateral = ({excluir, sair}) => {
+const MenuLateral = ({editar, excluir, sair}) => {
     return(
         <S.MenuLateral>
             <S.Lista>
