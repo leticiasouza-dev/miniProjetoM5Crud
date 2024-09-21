@@ -64,7 +64,6 @@ const TelaMedico = () => {
     return(
         <>
             <Header>
-                <input type="text" />
 
                 <S.ContainerIcons>
                     <img src={iconeSino} alt="" />

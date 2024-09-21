@@ -14,6 +14,17 @@ const Botao = styled.button`
 
     border: 1px solid black;
     text-decoration: none;
+
+    &:hover {
+        opacity: 0.9;
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+    }
+
+    &:active {
+        transform: scale(0.95);
+        transition: all 0.1s ease;
+    }
 `
 
 const Botoes = ({nome, background, color, largura, to, onClick}) => {

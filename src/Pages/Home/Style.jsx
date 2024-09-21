@@ -15,6 +15,8 @@ export const PrimeiraSessao = styled.section`
 
     @media screen and (max-width: 428px){
         flex-direction: column; 
+
+        
     }
 
 `
@@ -46,9 +48,23 @@ export const Figure = styled.figure`
     
     text-align: center;
 
+    @keyframes flutuar {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-15px); 
+        }
+        100% {
+            transform: translateY(0); 
+        }
+    }
+
     img{
         width: 90%;
         height: 600px;
+
+        animation: flutuar 3s ease-in-out infinite;
     }
 
     @media screen and (max-width: 428px){

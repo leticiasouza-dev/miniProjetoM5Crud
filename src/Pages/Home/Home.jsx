@@ -12,7 +12,6 @@ const Home = () => {
         <>
             <Header>
                 <ContainerBotoes>
-                    
                     <Botoes nome="Login" color='Black' to='/login'/>
                     <Botoes nome="Cadastre-se" background="Black" to='/cadastro'/>
                 </ContainerBotoes>

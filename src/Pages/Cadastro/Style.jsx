@@ -48,7 +48,6 @@ export const FormularioCadastro = styled.form`
     width: 100%;
     display: flex;
     flex-direction: column;
-
 `
 
 export const SessaoInformações = styled.section`
