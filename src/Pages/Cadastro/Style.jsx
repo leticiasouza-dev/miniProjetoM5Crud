@@ -14,6 +14,10 @@ export const SessaoCadastro = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media screen and (max-width: 428px){
+        width: 100%;
+    }
 `
 
 export const ContainerCadastro = styled.div`
@@ -34,6 +38,10 @@ export const ContainerCadastro = styled.div`
         margin: 20px 0;
         text-align: center;
     }
+
+    @media screen and (max-width: 428px){
+        padding: 0 50px;
+    }
 `
 
 export const FormularioCadastro = styled.form`
@@ -47,4 +55,8 @@ export const SessaoInformações = styled.section`
     width: 50%;
 
     background-color: #f4f4f4;
+
+    @media screen and (max-width: 428px){
+        display: none;
+    }
 `

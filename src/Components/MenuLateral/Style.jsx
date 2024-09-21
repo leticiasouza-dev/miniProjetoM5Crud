@@ -10,6 +10,11 @@ export const MenuLateral = styled.aside`
     left: 0;
     overflow-y: auto;
 
+    @media screen and (max-width: 428px){
+        width: 150px;
+        padding: 120px 10px 20px 10px;
+    }
+
 
 `
 
