@@ -76,7 +76,7 @@ const TelaMedico = () => {
                 <MenuLateral excluir={deletarMedicoId} sair={handleSair} setMostrarFormularioEdicao={setMostrarFormularioEdicao}/>
 
                 {mostrarFormularioEdicao ? (
-                    <FormularioEdicao/>
+                    <FormularioEdicao acaoCancelar={() => setMostrarFormularioEdicao(false)}/>
                 ) : (
                     <p>oiiii</p>
                 )
