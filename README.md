@@ -1,8 +1,19 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Sistema de Cadastro de Médicos
 
-Currently, two official plugins are available:
+Este projeto é um Sistema de Cadastro de Médicos que permite o gerenciamento eficiente de informações sobre profissionais de saúde envolvidos no processo de doação de sangue. O sistema utiliza uma API desenvolvida em Node.js e Express para fornecer uma interface intuitiva e funcional.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
+
+- Cadastro de Médicos: Permite o registro de novos médicos, com informações relevantes como nome, especialidade e contato.
+- Atualização de Dados: Médicos podem ser atualizados com novas informações conforme necessário.
+- Exclusão de Registros: Possibilidade de remover médicos do sistema.
+- Listagem de Médicos: Visualização dos dados do Médico cadastrado
+
+
+## Tecnologias utilizadas:
+
+**Front-end:** React, Styled.componets
+
+**Back-end:** Node, Express, Api
+
