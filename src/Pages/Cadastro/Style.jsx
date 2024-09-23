@@ -54,7 +54,24 @@ export const SessaoInformações = styled.section`
     width: 50%;
 
     background-color: #f4f4f4;
+    padding: 20px 40px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 
+  p {
+    font-size: 1.2rem; 
+    line-height: 1.6; 
+    color: #333; 
+    text-align: justify; 
+    margin: 0; 
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 15px 20px; 
+    p {
+      font-size: 1rem; 
+    }
+  }
     @media screen and (max-width: 428px){
         display: none;
     }

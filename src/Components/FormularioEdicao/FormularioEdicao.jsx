@@ -28,7 +28,7 @@ const FormularioEdicao = ({acaoCancelar}) => {
         }
     }, [medico]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const medicoAtualizado = {
@@ -37,10 +37,20 @@ const FormularioEdicao = ({acaoCancelar}) => {
             Telefone: novoTelefone,
             Especialidade: novaEspecialidade,
             Hospital: novoHospital,
-        }
+        };
 
-        editarMedico(medico.MedicoId, medicoAtualizado)
-    }
+        try {
+            await editarMedico(medico.MedicoId, medicoAtualizado);
+
+            
+            setMedico({ ...medico, ...medicoAtualizado });
+
+            
+            acaoCancelar(); 
+        } catch (error) {
+            console.error('Erro ao editar médico:', error);
+        }
+    };
 
     return(
         <S.formulario onSubmit={handleSubmit}>
