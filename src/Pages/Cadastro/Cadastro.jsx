@@ -1,5 +1,5 @@
 import * as S from './Style';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 import Header from '../../Components/Header/Header';
 
@@ -7,6 +7,8 @@ import CampoInput from '../../Components/CampoInput/Input';
 import Botoes from '../../Components/Botoes/Botoes';
 import { useState } from 'react';
 import { useCadastrarMedico } from '../../Hooks/useCadastrarMedico';
+
+import { useNavigate } from 'react-router-dom';
 
 const { cadastrarMedico } = useCadastrarMedico();
 
@@ -16,6 +18,8 @@ const Cadastro = () => {
     const [telefone, setTelefone] = useState('');
     const [especialidade, setEspecialidade] = useState('');
     const [hospital, setHospital] = useState('');
+
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -29,6 +33,9 @@ const Cadastro = () => {
         
         console.log(novoMedico);
         cadastrarMedico(novoMedico)
+        alert('Usuário cadastro com sucesso');
+
+        navigate('/login')
     }
 
     return(
