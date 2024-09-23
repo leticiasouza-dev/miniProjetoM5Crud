@@ -77,7 +77,15 @@ const TelaMedico = () => {
                 {mostrarFormularioEdicao ? (
                     <FormularioEdicao acaoCancelar={() => setMostrarFormularioEdicao(false)}/>
                 ) : (
-                    <p>oiiii</p>
+                    <S.DadosMedico>
+                        <h1>Dados médicos:</h1>
+                        <S.ParagrafoDados>Nome:{medico.Nome}</S.ParagrafoDados>
+                        <S.ParagrafoDados>Email:{medico.Email}</S.ParagrafoDados>
+                        <S.ParagrafoDados>Telefone: {medico.Telefone}</S.ParagrafoDados>
+                        <S.ParagrafoDados>Especialidade: {medico.Especialidade}</S.ParagrafoDados>
+                        <S.ParagrafoDados>Hospital: {medico.Hospital}</S.ParagrafoDados>
+                    </S.DadosMedico>
+
                 )
                 }
 
